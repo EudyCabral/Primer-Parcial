@@ -104,7 +104,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="BLL\" />
-    <Folder Include="DAL\Scripts\" />
     <Folder Include="ENTIDADES\" />
   </ItemGroup>
   <ItemGroup>
@@ -151,6 +150,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\icons8_Workstation_32.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DAL\Scripts\Scripts.sql" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
