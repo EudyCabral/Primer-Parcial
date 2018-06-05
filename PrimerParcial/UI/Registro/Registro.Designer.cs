@@ -60,6 +60,60 @@
             ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
+            // grupoidLabel
+            // 
+            grupoidLabel.AutoSize = true;
+            grupoidLabel.Location = new System.Drawing.Point(41, 43);
+            grupoidLabel.Name = "grupoidLabel";
+            grupoidLabel.Size = new System.Drawing.Size(47, 13);
+            grupoidLabel.TabIndex = 10;
+            grupoidLabel.Text = "Grupoid:";
+            // 
+            // fechaLabel
+            // 
+            fechaLabel.AutoSize = true;
+            fechaLabel.Location = new System.Drawing.Point(41, 100);
+            fechaLabel.Name = "fechaLabel";
+            fechaLabel.Size = new System.Drawing.Size(40, 13);
+            fechaLabel.TabIndex = 11;
+            fechaLabel.Text = "Fecha:";
+            // 
+            // descripcionLabel
+            // 
+            descripcionLabel.AutoSize = true;
+            descripcionLabel.Location = new System.Drawing.Point(41, 159);
+            descripcionLabel.Name = "descripcionLabel";
+            descripcionLabel.Size = new System.Drawing.Size(66, 13);
+            descripcionLabel.TabIndex = 12;
+            descripcionLabel.Text = "Descripcion:";
+            // 
+            // cantidadLabel
+            // 
+            cantidadLabel.AutoSize = true;
+            cantidadLabel.Location = new System.Drawing.Point(41, 205);
+            cantidadLabel.Name = "cantidadLabel";
+            cantidadLabel.Size = new System.Drawing.Size(52, 13);
+            cantidadLabel.TabIndex = 13;
+            cantidadLabel.Text = "Cantidad:";
+            // 
+            // grupoLabel
+            // 
+            grupoLabel.AutoSize = true;
+            grupoLabel.Location = new System.Drawing.Point(41, 251);
+            grupoLabel.Name = "grupoLabel";
+            grupoLabel.Size = new System.Drawing.Size(44, 13);
+            grupoLabel.TabIndex = 14;
+            grupoLabel.Text = "Grupos:";
+            // 
+            // integrantesLabel
+            // 
+            integrantesLabel.AutoSize = true;
+            integrantesLabel.Location = new System.Drawing.Point(41, 308);
+            integrantesLabel.Name = "integrantesLabel";
+            integrantesLabel.Size = new System.Drawing.Size(62, 13);
+            integrantesLabel.TabIndex = 15;
+            integrantesLabel.Text = "integrantes:";
+            // 
             // Eliminarbutton
             // 
             this.Eliminarbutton.FlatAppearance.BorderSize = 0;
@@ -117,30 +171,12 @@
             this.Buscarbutton.UseVisualStyleBackColor = true;
             this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
-            // grupoidLabel
-            // 
-            grupoidLabel.AutoSize = true;
-            grupoidLabel.Location = new System.Drawing.Point(41, 43);
-            grupoidLabel.Name = "grupoidLabel";
-            grupoidLabel.Size = new System.Drawing.Size(47, 13);
-            grupoidLabel.TabIndex = 10;
-            grupoidLabel.Text = "Grupoid:";
-            // 
             // grupoidNumericUpDown
             // 
             this.grupoidNumericUpDown.Location = new System.Drawing.Point(109, 40);
             this.grupoidNumericUpDown.Name = "grupoidNumericUpDown";
             this.grupoidNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.grupoidNumericUpDown.TabIndex = 11;
-            // 
-            // fechaLabel
-            // 
-            fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(41, 100);
-            fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(40, 13);
-            fechaLabel.TabIndex = 11;
-            fechaLabel.Text = "Fecha:";
             // 
             // fechaDateTimePicker
             // 
@@ -151,15 +187,6 @@
             this.fechaDateTimePicker.TabIndex = 12;
             this.fechaDateTimePicker.Value = new System.DateTime(2018, 6, 4, 0, 0, 0, 0);
             // 
-            // descripcionLabel
-            // 
-            descripcionLabel.AutoSize = true;
-            descripcionLabel.Location = new System.Drawing.Point(41, 159);
-            descripcionLabel.Name = "descripcionLabel";
-            descripcionLabel.Size = new System.Drawing.Size(66, 13);
-            descripcionLabel.TabIndex = 12;
-            descripcionLabel.Text = "Descripcion:";
-            // 
             // descripcionTextBox
             // 
             this.descripcionTextBox.Location = new System.Drawing.Point(109, 139);
@@ -168,30 +195,12 @@
             this.descripcionTextBox.Size = new System.Drawing.Size(120, 57);
             this.descripcionTextBox.TabIndex = 13;
             // 
-            // cantidadLabel
-            // 
-            cantidadLabel.AutoSize = true;
-            cantidadLabel.Location = new System.Drawing.Point(41, 205);
-            cantidadLabel.Name = "cantidadLabel";
-            cantidadLabel.Size = new System.Drawing.Size(52, 13);
-            cantidadLabel.TabIndex = 13;
-            cantidadLabel.Text = "Cantidad:";
-            // 
             // cantidadNumericUpDown
             // 
             this.cantidadNumericUpDown.Location = new System.Drawing.Point(109, 202);
             this.cantidadNumericUpDown.Name = "cantidadNumericUpDown";
             this.cantidadNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.cantidadNumericUpDown.TabIndex = 14;
-            // 
-            // grupoLabel
-            // 
-            grupoLabel.AutoSize = true;
-            grupoLabel.Location = new System.Drawing.Point(41, 251);
-            grupoLabel.Name = "grupoLabel";
-            grupoLabel.Size = new System.Drawing.Size(44, 13);
-            grupoLabel.TabIndex = 14;
-            grupoLabel.Text = "Grupos:";
             // 
             // grupoNumericUpDown
             // 
@@ -200,15 +209,6 @@
             this.grupoNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.grupoNumericUpDown.TabIndex = 15;
             // 
-            // integrantesLabel
-            // 
-            integrantesLabel.AutoSize = true;
-            integrantesLabel.Location = new System.Drawing.Point(41, 308);
-            integrantesLabel.Name = "integrantesLabel";
-            integrantesLabel.Size = new System.Drawing.Size(62, 13);
-            integrantesLabel.TabIndex = 15;
-            integrantesLabel.Text = "integrantes:";
-            // 
             // integrantesNumericUpDown
             // 
             this.integrantesNumericUpDown.Enabled = false;
@@ -216,7 +216,7 @@
             this.integrantesNumericUpDown.Name = "integrantesNumericUpDown";
             this.integrantesNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.integrantesNumericUpDown.TabIndex = 16;
-           
+            this.integrantesNumericUpDown.ValueChanged += new System.EventHandler(this.integrantesNumericUpDown_ValueChanged);
             // 
             // GeneralerrorProvider
             // 

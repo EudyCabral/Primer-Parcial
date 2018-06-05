@@ -24,7 +24,8 @@ namespace PrimerParcial.UI.Registro
             grupos.Descripcion = descripcionTextBox.Text;
             grupos.Cantidad = Convert.ToInt32(cantidadNumericUpDown.Value);
             grupos.Grupo = Convert.ToInt32(grupoNumericUpDown.Value);
-            grupos.integrantes = Convert.ToInt32(integrantesNumericUpDown.Value);
+            grupos.integrantes = Convert.ToInt32(cantidadNumericUpDown.Value) / Convert.ToInt32(grupoNumericUpDown.Value);
+           // Convert.ToInt32(integrantesNumericUpDown.Value);
             return grupos;
         }
 
@@ -162,6 +163,9 @@ namespace PrimerParcial.UI.Registro
             return paso;
         }
 
-      
+        private void integrantesNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+          
+        }
     }
 }
