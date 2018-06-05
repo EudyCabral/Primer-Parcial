@@ -165,7 +165,13 @@ namespace PrimerParcial.UI.Registro
 
         private void integrantesNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-          
+           
+           
+        }
+
+        private void grupoNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            integrantesNumericUpDown.Value = cantidadNumericUpDown.Value / grupoNumericUpDown.Value;
         }
     }
 }

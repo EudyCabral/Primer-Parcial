@@ -208,6 +208,7 @@
             this.grupoNumericUpDown.Name = "grupoNumericUpDown";
             this.grupoNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.grupoNumericUpDown.TabIndex = 15;
+            this.grupoNumericUpDown.ValueChanged += new System.EventHandler(this.grupoNumericUpDown_ValueChanged);
             // 
             // integrantesNumericUpDown
             // 
