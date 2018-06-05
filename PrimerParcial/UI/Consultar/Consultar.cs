@@ -27,8 +27,9 @@ namespace PrimerParcial.UI.Consultar
             switch(FiltrocomboBox.SelectedIndex)
             {
                
+
                 case 0://Grupo ID
-                  
+                    int id = Convert.ToInt32(criteriotextBox.Text);
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -38,12 +39,12 @@ namespace PrimerParcial.UI.Consultar
                     {
                         if (FechacheckBox.Checked == true)
                         {
-                            Filtro = x => x.Grupoid.Equals(criteriotextBox.Text) && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                            Filtro = x => x.Grupoid==id && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
 
                         }
                         else
                         {
-                            Filtro = x => x.Grupoid.Equals(criteriotextBox.Text);
+                            Filtro = x => x.Grupoid==id;
                         }
                     }
                     break;

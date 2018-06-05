@@ -114,7 +114,7 @@
             this.ConsultardataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.ConsultardataGridView.Location = new System.Drawing.Point(7, 87);
             this.ConsultardataGridView.Name = "ConsultardataGridView";
-            this.ConsultardataGridView.Size = new System.Drawing.Size(509, 310);
+            this.ConsultardataGridView.Size = new System.Drawing.Size(631, 310);
             this.ConsultardataGridView.TabIndex = 17;
             // 
             // Buscarbutton
@@ -181,7 +181,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(525, 450);
+            this.ClientSize = new System.Drawing.Size(643, 450);
             this.Controls.Add(this.FechacheckBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
