@@ -25,7 +25,7 @@ namespace PrimerParcial.UI.Registro
             grupos.Cantidad = Convert.ToInt32(cantidadNumericUpDown.Value);
             grupos.Grupo = Convert.ToInt32(grupoNumericUpDown.Value);
             grupos.integrantes = Convert.ToInt32(cantidadNumericUpDown.Value) / Convert.ToInt32(grupoNumericUpDown.Value);
-           // Convert.ToInt32(integrantesNumericUpDown.Value);
+           
             return grupos;
         }
 
