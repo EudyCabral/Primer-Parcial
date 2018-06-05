@@ -28,20 +28,23 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Consultar));
             this.FechacheckBox = new System.Windows.Forms.CheckBox();
             this.label4 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.AstadateTimePicker = new System.Windows.Forms.DateTimePicker();
+            this.HastadateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.DesdedateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.Imprimirbutton = new System.Windows.Forms.Button();
-            this.dataGridView = new System.Windows.Forms.DataGridView();
+            this.ConsultardataGridView = new System.Windows.Forms.DataGridView();
             this.Buscarbutton = new System.Windows.Forms.Button();
             this.criteriotextBox = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.FiltrocomboBox = new System.Windows.Forms.ComboBox();
             this.label1 = new System.Windows.Forms.Label();
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).BeginInit();
+            this.GeneralerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultardataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).BeginInit();
             this.SuspendLayout();
             // 
             // FechacheckBox
@@ -59,11 +62,11 @@
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(282, 55);
+            this.label4.Location = new System.Drawing.Point(272, 55);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(31, 13);
+            this.label4.Size = new System.Drawing.Size(38, 13);
             this.label4.TabIndex = 22;
-            this.label4.Text = "Asta:";
+            this.label4.Text = "Hasta:";
             // 
             // label3
             // 
@@ -74,13 +77,14 @@
             this.label3.TabIndex = 21;
             this.label3.Text = "Desde:";
             // 
-            // AstadateTimePicker
+            // HastadateTimePicker
             // 
-            this.AstadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.AstadateTimePicker.Location = new System.Drawing.Point(316, 51);
-            this.AstadateTimePicker.Name = "AstadateTimePicker";
-            this.AstadateTimePicker.Size = new System.Drawing.Size(200, 20);
-            this.AstadateTimePicker.TabIndex = 20;
+            this.HastadateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
+            this.HastadateTimePicker.Location = new System.Drawing.Point(316, 51);
+            this.HastadateTimePicker.Name = "HastadateTimePicker";
+            this.HastadateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.HastadateTimePicker.TabIndex = 20;
+            this.HastadateTimePicker.Value = new System.DateTime(2018, 6, 4, 0, 0, 0, 0);
             // 
             // DesdedateTimePicker
             // 
@@ -89,6 +93,7 @@
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.DesdedateTimePicker.TabIndex = 19;
+            this.DesdedateTimePicker.Value = new System.DateTime(2018, 6, 4, 0, 0, 0, 0);
             // 
             // Imprimirbutton
             // 
@@ -104,13 +109,13 @@
             this.Imprimirbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Imprimirbutton.UseVisualStyleBackColor = true;
             // 
-            // dataGridView
+            // ConsultardataGridView
             // 
-            this.dataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dataGridView.Location = new System.Drawing.Point(7, 87);
-            this.dataGridView.Name = "dataGridView";
-            this.dataGridView.Size = new System.Drawing.Size(509, 310);
-            this.dataGridView.TabIndex = 17;
+            this.ConsultardataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.ConsultardataGridView.Location = new System.Drawing.Point(7, 87);
+            this.ConsultardataGridView.Name = "ConsultardataGridView";
+            this.ConsultardataGridView.Size = new System.Drawing.Size(509, 310);
+            this.ConsultardataGridView.TabIndex = 17;
             // 
             // Buscarbutton
             // 
@@ -125,6 +130,7 @@
             this.Buscarbutton.Text = "Buscar";
             this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // criteriotextBox
             // 
@@ -147,7 +153,11 @@
             this.FiltrocomboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.FiltrocomboBox.FormattingEnabled = true;
             this.FiltrocomboBox.Items.AddRange(new object[] {
-            "ID",
+            "Grupo Id",
+            "Descripcion",
+            "Cantidad",
+            "Grupos",
+            "Integrantes",
             "Todo"});
             this.FiltrocomboBox.Location = new System.Drawing.Point(44, 9);
             this.FiltrocomboBox.Name = "FiltrocomboBox";
@@ -163,6 +173,10 @@
             this.label1.TabIndex = 12;
             this.label1.Text = "Filtro";
             // 
+            // GeneralerrorProvider
+            // 
+            this.GeneralerrorProvider.ContainerControl = this;
+            // 
             // Consultar
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -171,10 +185,10 @@
             this.Controls.Add(this.FechacheckBox);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label3);
-            this.Controls.Add(this.AstadateTimePicker);
+            this.Controls.Add(this.HastadateTimePicker);
             this.Controls.Add(this.DesdedateTimePicker);
             this.Controls.Add(this.Imprimirbutton);
-            this.Controls.Add(this.dataGridView);
+            this.Controls.Add(this.ConsultardataGridView);
             this.Controls.Add(this.Buscarbutton);
             this.Controls.Add(this.criteriotextBox);
             this.Controls.Add(this.label2);
@@ -183,7 +197,9 @@
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Consultar";
             this.Text = "Consultar";
-            ((System.ComponentModel.ISupportInitialize)(this.dataGridView)).EndInit();
+            this.Load += new System.EventHandler(this.Consultar_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.ConsultardataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.GeneralerrorProvider)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -194,14 +210,15 @@
         private System.Windows.Forms.CheckBox FechacheckBox;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.DateTimePicker AstadateTimePicker;
+        private System.Windows.Forms.DateTimePicker HastadateTimePicker;
         private System.Windows.Forms.DateTimePicker DesdedateTimePicker;
         private System.Windows.Forms.Button Imprimirbutton;
-        private System.Windows.Forms.DataGridView dataGridView;
+        private System.Windows.Forms.DataGridView ConsultardataGridView;
         private System.Windows.Forms.Button Buscarbutton;
         private System.Windows.Forms.TextBox criteriotextBox;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.ComboBox FiltrocomboBox;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.ErrorProvider GeneralerrorProvider;
     }
 }
