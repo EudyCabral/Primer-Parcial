@@ -29,7 +29,7 @@ namespace PrimerParcial.UI.Consultar
                
 
                 case 0://Grupo ID
-                    int id = Convert.ToInt32(criteriotextBox.Text);
+                   
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -37,14 +37,22 @@ namespace PrimerParcial.UI.Consultar
                     }
                     else
                     {
+                        int id = Convert.ToInt32(criteriotextBox.Text);
                         if (FechacheckBox.Checked == true)
                         {
                             Filtro = x => x.Grupoid==id && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
-
+                            GeneralerrorProvider.Clear();
                         }
                         else
                         {
                             Filtro = x => x.Grupoid==id;
+                            GeneralerrorProvider.Clear();
+                        }
+
+                        if(BLL.GruposBLL.GetList(Filtro).Count()==0)
+                        {
+                            MessageBox.Show("Este ID, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
                         }
                     }
                     break;
@@ -60,17 +68,25 @@ namespace PrimerParcial.UI.Consultar
                         if (FechacheckBox.Checked == true)
                         {
                             Filtro = x => x.Descripcion.Contains(criteriotextBox.Text) && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
-
+                            GeneralerrorProvider.Clear();
                         }
                         else
                         {
                             Filtro = x => x.Descripcion.Contains(criteriotextBox.Text);
+                            GeneralerrorProvider.Clear();
                         }
+
+                        if (BLL.GruposBLL.GetList(Filtro).Count() == 0)
+                        {
+                            MessageBox.Show("Esta Descripcion, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
                     }
                     break;
                 case 2://Cantidad
 
-                    int Cantidades = Convert.ToInt32(criteriotextBox.Text);
+                    
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,20 +94,31 @@ namespace PrimerParcial.UI.Consultar
                     }
                     else
                     {
+                        int Cantidades = Convert.ToInt32(criteriotextBox.Text);
                         if (FechacheckBox.Checked == true)
                         {
                             Filtro = x => x.Cantidad==Cantidades && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
-
+                            GeneralerrorProvider.Clear();
                         }
                         else
                         {
                             Filtro = x => x.Cantidad==Cantidades;
+                            GeneralerrorProvider.Clear();
                         }
+
+
+                        if (BLL.GruposBLL.GetList(Filtro).Count() == 0)
+                        {
+                            MessageBox.Show("Esta Cantidad, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
+
                     }
                     break;
                 case 3://Grupos
 
-                    int grupo = Convert.ToInt32(criteriotextBox.Text);
+                    
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -99,20 +126,28 @@ namespace PrimerParcial.UI.Consultar
                     }
                     else
                     {
+                        int grupo = Convert.ToInt32(criteriotextBox.Text);
                         if (FechacheckBox.Checked == true)
                         {
                             Filtro = x => x.Grupo == grupo && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
-
+                            GeneralerrorProvider.Clear();
                         }
                         else
                         {
                             Filtro = x => x.Grupo == grupo;
+                            GeneralerrorProvider.Clear();
                         }
+                        if (BLL.GruposBLL.GetList(Filtro).Count() == 0)
+                        {
+                            MessageBox.Show("Este # de Grupos No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                            return;
+                        }
+
                     }
                     break;
                 case 4://Integrantes
                     {
-                        int Integrantes = Convert.ToInt32(criteriotextBox.Text);
+                        
 
                         if (Validar(1))
 
@@ -122,24 +157,38 @@ namespace PrimerParcial.UI.Consultar
                         }
                         else
                         {
+                            int Integrantes = Convert.ToInt32(criteriotextBox.Text);
                             if (FechacheckBox.Checked == true)
                             {
                                 Filtro = x => x.integrantes == Integrantes && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
-
+                                GeneralerrorProvider.Clear();
                             }
                             else
                             {
                                 Filtro = x => x.integrantes == Integrantes;
+                                GeneralerrorProvider.Clear();
                             }
+                            if (BLL.GruposBLL.GetList(Filtro).Count() == 0)
+                            {
+                                MessageBox.Show("Este # de Integrantes, No Existe ", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                                return;
+                            }
+
                         }
                     }
                     break;
                 case 5://Todo
                     ConsultardataGridView.DataSource = BLL.GruposBLL.GetList(Filtro);
+                    if (BLL.GruposBLL.GetList(Filtro).Count() == 0)
+                    {
+                        MessageBox.Show("Lista esta Vacia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        return;
+                    }
+
                     break;
             }
             ConsultardataGridView.DataSource = BLL.GruposBLL.GetList(Filtro);
-            
+           
         }
 
         private bool Validar(int error)
