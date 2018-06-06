@@ -174,6 +174,11 @@
             // grupoidNumericUpDown
             // 
             this.grupoidNumericUpDown.Location = new System.Drawing.Point(109, 40);
+            this.grupoidNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.grupoidNumericUpDown.Name = "grupoidNumericUpDown";
             this.grupoidNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.grupoidNumericUpDown.TabIndex = 11;
@@ -198,6 +203,11 @@
             // cantidadNumericUpDown
             // 
             this.cantidadNumericUpDown.Location = new System.Drawing.Point(109, 202);
+            this.cantidadNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.cantidadNumericUpDown.Name = "cantidadNumericUpDown";
             this.cantidadNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.cantidadNumericUpDown.TabIndex = 14;
@@ -205,6 +215,11 @@
             // grupoNumericUpDown
             // 
             this.grupoNumericUpDown.Location = new System.Drawing.Point(109, 249);
+            this.grupoNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.grupoNumericUpDown.Name = "grupoNumericUpDown";
             this.grupoNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.grupoNumericUpDown.TabIndex = 15;
@@ -214,6 +229,11 @@
             // 
             this.integrantesNumericUpDown.Enabled = false;
             this.integrantesNumericUpDown.Location = new System.Drawing.Point(109, 305);
+            this.integrantesNumericUpDown.Maximum = new decimal(new int[] {
+            1000000,
+            0,
+            0,
+            0});
             this.integrantesNumericUpDown.Name = "integrantesNumericUpDown";
             this.integrantesNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.integrantesNumericUpDown.TabIndex = 16;
