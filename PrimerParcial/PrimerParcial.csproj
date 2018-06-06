@@ -153,6 +153,9 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="DAL\Scripts\Scripts.sql" />
+    <None Include="Resources\presencial_icono_finaaal.png" />
+    <None Include="Resources\REGISTRO_VISITANTES.gif" />
+    <None Include="Resources\idc.brightspotcdn.com.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

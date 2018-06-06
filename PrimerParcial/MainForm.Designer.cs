@@ -70,7 +70,7 @@
             // 
             this.registroToolStripMenuItem1.Image = global::PrimerParcial.Properties.Resources.icons8_Form_48;
             this.registroToolStripMenuItem1.Name = "registroToolStripMenuItem1";
-            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(180, 22);
+            this.registroToolStripMenuItem1.Size = new System.Drawing.Size(117, 22);
             this.registroToolStripMenuItem1.Text = "Registro";
             this.registroToolStripMenuItem1.Click += new System.EventHandler(this.registroToolStripMenuItem1_Click);
             // 
@@ -87,7 +87,7 @@
             // 
             this.consultaToolStripMenuItem.Image = global::PrimerParcial.Properties.Resources.icons8_List_48;
             this.consultaToolStripMenuItem.Name = "consultaToolStripMenuItem";
-            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.consultaToolStripMenuItem.Size = new System.Drawing.Size(121, 22);
             this.consultaToolStripMenuItem.Text = "Consulta";
             this.consultaToolStripMenuItem.Click += new System.EventHandler(this.consultaToolStripMenuItem_Click);
             // 
@@ -95,6 +95,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackgroundImage = global::PrimerParcial.Properties.Resources.idc_brightspotcdn_com;
             this.ClientSize = new System.Drawing.Size(508, 324);
             this.Controls.Add(this.menuStrip1);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));

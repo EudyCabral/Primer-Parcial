@@ -36,10 +36,6 @@
             System.Windows.Forms.Label grupoLabel;
             System.Windows.Forms.Label integrantesLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Registro));
-            this.Eliminarbutton = new System.Windows.Forms.Button();
-            this.Guardarbutton = new System.Windows.Forms.Button();
-            this.Nuevobutton = new System.Windows.Forms.Button();
-            this.Buscarbutton = new System.Windows.Forms.Button();
             this.grupoidNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.descripcionTextBox = new System.Windows.Forms.TextBox();
@@ -47,6 +43,10 @@
             this.grupoNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.integrantesNumericUpDown = new System.Windows.Forms.NumericUpDown();
             this.GeneralerrorProvider = new System.Windows.Forms.ErrorProvider(this.components);
+            this.Eliminarbutton = new System.Windows.Forms.Button();
+            this.Guardarbutton = new System.Windows.Forms.Button();
+            this.Nuevobutton = new System.Windows.Forms.Button();
+            this.Buscarbutton = new System.Windows.Forms.Button();
             grupoidLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             descripcionLabel = new System.Windows.Forms.Label();
@@ -113,63 +113,6 @@
             integrantesLabel.Size = new System.Drawing.Size(62, 13);
             integrantesLabel.TabIndex = 15;
             integrantesLabel.Text = "integrantes:";
-            // 
-            // Eliminarbutton
-            // 
-            this.Eliminarbutton.FlatAppearance.BorderSize = 0;
-            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Eliminarbutton.Image = global::PrimerParcial.Properties.Resources.icons8_Delete_Document_48;
-            this.Eliminarbutton.Location = new System.Drawing.Point(352, 352);
-            this.Eliminarbutton.Name = "Eliminarbutton";
-            this.Eliminarbutton.Size = new System.Drawing.Size(75, 68);
-            this.Eliminarbutton.TabIndex = 9;
-            this.Eliminarbutton.Text = "Eliminar";
-            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Eliminarbutton.UseVisualStyleBackColor = true;
-            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
-            // 
-            // Guardarbutton
-            // 
-            this.Guardarbutton.FlatAppearance.BorderSize = 0;
-            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Guardarbutton.Image = global::PrimerParcial.Properties.Resources.icons8_Save_48;
-            this.Guardarbutton.Location = new System.Drawing.Point(189, 352);
-            this.Guardarbutton.Name = "Guardarbutton";
-            this.Guardarbutton.Size = new System.Drawing.Size(75, 68);
-            this.Guardarbutton.TabIndex = 8;
-            this.Guardarbutton.Text = "Guardar";
-            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Guardarbutton.UseVisualStyleBackColor = true;
-            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
-            // 
-            // Nuevobutton
-            // 
-            this.Nuevobutton.FlatAppearance.BorderSize = 0;
-            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Nuevobutton.Image = global::PrimerParcial.Properties.Resources.icons8_Broom_48;
-            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
-            this.Nuevobutton.Location = new System.Drawing.Point(24, 352);
-            this.Nuevobutton.Name = "Nuevobutton";
-            this.Nuevobutton.Size = new System.Drawing.Size(75, 68);
-            this.Nuevobutton.TabIndex = 7;
-            this.Nuevobutton.Text = "Nuevo";
-            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Nuevobutton.UseVisualStyleBackColor = true;
-            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
-            // 
-            // Buscarbutton
-            // 
-            this.Buscarbutton.FlatAppearance.BorderSize = 0;
-            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.Buscarbutton.Image = global::PrimerParcial.Properties.Resources.icons8_Search_32;
-            this.Buscarbutton.Location = new System.Drawing.Point(244, 26);
-            this.Buscarbutton.Name = "Buscarbutton";
-            this.Buscarbutton.Size = new System.Drawing.Size(75, 53);
-            this.Buscarbutton.TabIndex = 6;
-            this.Buscarbutton.Text = "Buscar";
-            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.Buscarbutton.UseVisualStyleBackColor = true;
-            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
             // 
             // grupoidNumericUpDown
             // 
@@ -243,10 +186,70 @@
             // 
             this.GeneralerrorProvider.ContainerControl = this;
             // 
+            // Eliminarbutton
+            // 
+            this.Eliminarbutton.FlatAppearance.BorderSize = 0;
+            this.Eliminarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Eliminarbutton.Image = global::PrimerParcial.Properties.Resources.icons8_Delete_Document_48;
+            this.Eliminarbutton.Location = new System.Drawing.Point(352, 352);
+            this.Eliminarbutton.Name = "Eliminarbutton";
+            this.Eliminarbutton.Size = new System.Drawing.Size(75, 68);
+            this.Eliminarbutton.TabIndex = 9;
+            this.Eliminarbutton.Text = "Eliminar";
+            this.Eliminarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Eliminarbutton.UseVisualStyleBackColor = true;
+            this.Eliminarbutton.Click += new System.EventHandler(this.Eliminarbutton_Click);
+            // 
+            // Guardarbutton
+            // 
+            this.Guardarbutton.FlatAppearance.BorderSize = 0;
+            this.Guardarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Guardarbutton.Image = global::PrimerParcial.Properties.Resources.icons8_Save_48;
+            this.Guardarbutton.Location = new System.Drawing.Point(189, 352);
+            this.Guardarbutton.Name = "Guardarbutton";
+            this.Guardarbutton.Size = new System.Drawing.Size(75, 68);
+            this.Guardarbutton.TabIndex = 8;
+            this.Guardarbutton.Text = "Guardar";
+            this.Guardarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Guardarbutton.UseVisualStyleBackColor = true;
+            this.Guardarbutton.Click += new System.EventHandler(this.Guardarbutton_Click);
+            // 
+            // Nuevobutton
+            // 
+            this.Nuevobutton.FlatAppearance.BorderSize = 0;
+            this.Nuevobutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Nuevobutton.Image = global::PrimerParcial.Properties.Resources.icons8_Broom_48;
+            this.Nuevobutton.ImageAlign = System.Drawing.ContentAlignment.TopCenter;
+            this.Nuevobutton.Location = new System.Drawing.Point(24, 352);
+            this.Nuevobutton.Name = "Nuevobutton";
+            this.Nuevobutton.Size = new System.Drawing.Size(75, 68);
+            this.Nuevobutton.TabIndex = 7;
+            this.Nuevobutton.Text = "Nuevo";
+            this.Nuevobutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Nuevobutton.UseVisualStyleBackColor = true;
+            this.Nuevobutton.Click += new System.EventHandler(this.Nuevobutton_Click);
+            // 
+            // Buscarbutton
+            // 
+            this.Buscarbutton.FlatAppearance.BorderSize = 0;
+            this.Buscarbutton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.Buscarbutton.Image = global::PrimerParcial.Properties.Resources.icons8_Search_32;
+            this.Buscarbutton.Location = new System.Drawing.Point(244, 26);
+            this.Buscarbutton.Name = "Buscarbutton";
+            this.Buscarbutton.Size = new System.Drawing.Size(75, 53);
+            this.Buscarbutton.TabIndex = 6;
+            this.Buscarbutton.Text = "Buscar";
+            this.Buscarbutton.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
+            this.Buscarbutton.UseVisualStyleBackColor = true;
+            this.Buscarbutton.Click += new System.EventHandler(this.Buscarbutton_Click);
+            // 
             // Registro
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.ControlLightLight;
+            this.BackgroundImage = global::PrimerParcial.Properties.Resources.presencial_icono_finaaal;
+            this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.ClientSize = new System.Drawing.Size(459, 440);
             this.Controls.Add(integrantesLabel);
             this.Controls.Add(this.integrantesNumericUpDown);
@@ -264,6 +267,7 @@
             this.Controls.Add(this.Guardarbutton);
             this.Controls.Add(this.Nuevobutton);
             this.Controls.Add(this.Buscarbutton);
+            this.DoubleBuffered = true;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Registro";
             this.Text = "Registro";

@@ -209,5 +209,35 @@ namespace PrimerParcial.Properties {
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap idc_brightspotcdn_com {
+            get {
+                object obj = ResourceManager.GetObject("idc.brightspotcdn.com", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap presencial_icono_finaaal {
+            get {
+                object obj = ResourceManager.GetObject("presencial_icono_finaaal", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap REGISTRO_VISITANTES {
+            get {
+                object obj = ResourceManager.GetObject("REGISTRO_VISITANTES", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
     }
 }
