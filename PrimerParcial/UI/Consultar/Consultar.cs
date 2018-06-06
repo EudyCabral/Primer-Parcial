@@ -69,6 +69,8 @@ namespace PrimerParcial.UI.Consultar
                     }
                     break;
                 case 2://Cantidad
+
+                    int Cantidades = Convert.ToInt32(criteriotextBox.Text);
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -78,16 +80,18 @@ namespace PrimerParcial.UI.Consultar
                     {
                         if (FechacheckBox.Checked == true)
                         {
-                            Filtro = x => x.Cantidad.Equals(criteriotextBox.Text) && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                            Filtro = x => x.Cantidad==Cantidades && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
 
                         }
                         else
                         {
-                            Filtro = x => x.Cantidad.Equals(criteriotextBox.Text);
+                            Filtro = x => x.Cantidad==Cantidades;
                         }
                     }
                     break;
                 case 3://Grupos
+
+                    int grupo = Convert.ToInt32(criteriotextBox.Text);
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -97,18 +101,19 @@ namespace PrimerParcial.UI.Consultar
                     {
                         if (FechacheckBox.Checked == true)
                         {
-                            Filtro = x => x.Grupo.Equals(criteriotextBox.Text) && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                            Filtro = x => x.Grupo == grupo && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
 
                         }
                         else
                         {
-                            Filtro = x => x.Grupo.Equals(criteriotextBox.Text);
+                            Filtro = x => x.Grupo == grupo;
                         }
                     }
                     break;
                 case 4://Integrantes
                     {
-                        
+                        int Integrantes = Convert.ToInt32(criteriotextBox.Text);
+
                         if (Validar(1))
 
                         {
@@ -119,12 +124,12 @@ namespace PrimerParcial.UI.Consultar
                         {
                             if (FechacheckBox.Checked == true)
                             {
-                                Filtro = x => x.integrantes.Equals(criteriotextBox.Text) && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                                Filtro = x => x.integrantes == Integrantes && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
 
                             }
                             else
                             {
-                                Filtro = x => x.integrantes.Equals(criteriotextBox.Text);
+                                Filtro = x => x.integrantes == Integrantes;
                             }
                         }
                     }
