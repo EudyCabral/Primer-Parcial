@@ -20,49 +20,57 @@ namespace PrimerParcial.UI.Consultar
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
+            ConsultardataGridView.DataSource = null;
             Grupos grupos = new Grupos();
-            Expression<Func<Grupos, bool>> Filtro = x => true; 
+            Expression<Func<Grupos, bool>> Filtro = x => true;
 
 
-            switch(FiltrocomboBox.SelectedIndex)
+            switch (FiltrocomboBox.SelectedIndex)
             {
-               
+
 
                 case 0://Grupo ID
-                   
+
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        return;
+                    }
+                    if (Validar(2))
+                    {
+                        MessageBox.Show("Debe Digitar un Numero!");
+                        return;
                     }
                     else
                     {
                         int id = Convert.ToInt32(criteriotextBox.Text);
                         if (FechacheckBox.Checked == true)
                         {
-                            Filtro = x => x.Grupoid==id && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                            Filtro = x => x.Grupoid == id && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
                             GeneralerrorProvider.Clear();
                         }
                         else
                         {
-                            Filtro = x => x.Grupoid==id;
+                            Filtro = x => x.Grupoid == id;
                             GeneralerrorProvider.Clear();
                         }
 
-                        if(BLL.GruposBLL.GetList(Filtro).Count()==0)
+                        if (BLL.GruposBLL.GetList(Filtro).Count() == 0)
                         {
                             MessageBox.Show("Este ID, No Existe", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
                             return;
                         }
                     }
+
                     break;
-                
+
                 case 1://Descripcion
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        return;
                     }
+
                     else
                     {
                         if (FechacheckBox.Checked == true)
@@ -86,23 +94,28 @@ namespace PrimerParcial.UI.Consultar
                     break;
                 case 2://Cantidad
 
-                    
+
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        return;
+                    }
+                    if (Validar(2))
+                    {
+                        MessageBox.Show("Debe Digitar un Numero!");
+                        return;
                     }
                     else
                     {
                         int Cantidades = Convert.ToInt32(criteriotextBox.Text);
                         if (FechacheckBox.Checked == true)
                         {
-                            Filtro = x => x.Cantidad==Cantidades && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
+                            Filtro = x => x.Cantidad == Cantidades && (x.Fecha.Day >= DesdedateTimePicker.Value.Day) && (x.Fecha.Month >= DesdedateTimePicker.Value.Month) && (x.Fecha.Year >= DesdedateTimePicker.Value.Year) && (x.Fecha.Day <= HastadateTimePicker.Value.Day) && (x.Fecha.Month <= HastadateTimePicker.Value.Month) && (x.Fecha.Year <= HastadateTimePicker.Value.Year);
                             GeneralerrorProvider.Clear();
                         }
                         else
                         {
-                            Filtro = x => x.Cantidad==Cantidades;
+                            Filtro = x => x.Cantidad == Cantidades;
                             GeneralerrorProvider.Clear();
                         }
 
@@ -118,11 +131,16 @@ namespace PrimerParcial.UI.Consultar
                     break;
                 case 3://Grupos
 
-                    
+
                     if (Validar(1))
                     {
                         MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                        return;
+                    }
+                    if (Validar(2))
+                    {
+                        MessageBox.Show("Debe Digitar un Numero!");
+                        return;
                     }
                     else
                     {
@@ -147,13 +165,18 @@ namespace PrimerParcial.UI.Consultar
                     break;
                 case 4://Integrantes
                     {
-                        
 
+                       
                         if (Validar(1))
 
                         {
                             MessageBox.Show("Favor Llenar Casilla ", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-
+                            return;
+                        }
+                        if (Validar(2))
+                        {
+                            MessageBox.Show("Debe Digitar un Numero!");
+                            return;
                         }
                         else
                         {
@@ -178,7 +201,7 @@ namespace PrimerParcial.UI.Consultar
                     }
                     break;
                 case 5://Todo
-                    ConsultardataGridView.DataSource = BLL.GruposBLL.GetList(Filtro);
+                    Filtro = x => true;
                     if (BLL.GruposBLL.GetList(Filtro).Count() == 0)
                     {
                         MessageBox.Show("Lista esta Vacia", "Aviso", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -188,7 +211,7 @@ namespace PrimerParcial.UI.Consultar
                     break;
             }
             ConsultardataGridView.DataSource = BLL.GruposBLL.GetList(Filtro);
-           
+
         }
 
         private bool Validar(int error)
@@ -209,7 +232,7 @@ namespace PrimerParcial.UI.Consultar
 
             if (error == 3 && int.TryParse(criteriotextBox.Text, out num) == true)
             {
-                GeneralerrorProvider.SetError(criteriotextBox, "Debe Digitar Caracteses");
+                GeneralerrorProvider.SetError(criteriotextBox, "Debe Digitar Caracteres");
                 paso = true;
             }
 

@@ -133,7 +133,7 @@
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
             this.fechaDateTimePicker.Size = new System.Drawing.Size(120, 20);
             this.fechaDateTimePicker.TabIndex = 12;
-            this.fechaDateTimePicker.Value = new System.DateTime(2018, 6, 4, 0, 0, 0, 0);
+            this.fechaDateTimePicker.Value = new System.DateTime(2018, 6, 6, 14, 34, 38, 0);
             // 
             // descripcionTextBox
             // 
@@ -154,6 +154,7 @@
             this.cantidadNumericUpDown.Name = "cantidadNumericUpDown";
             this.cantidadNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.cantidadNumericUpDown.TabIndex = 14;
+            this.cantidadNumericUpDown.ValueChanged += new System.EventHandler(this.cantidadNumericUpDown_ValueChanged);
             // 
             // grupoNumericUpDown
             // 
@@ -180,7 +181,6 @@
             this.integrantesNumericUpDown.Name = "integrantesNumericUpDown";
             this.integrantesNumericUpDown.Size = new System.Drawing.Size(120, 20);
             this.integrantesNumericUpDown.TabIndex = 16;
-            this.integrantesNumericUpDown.ValueChanged += new System.EventHandler(this.integrantesNumericUpDown_ValueChanged);
             // 
             // GeneralerrorProvider
             // 

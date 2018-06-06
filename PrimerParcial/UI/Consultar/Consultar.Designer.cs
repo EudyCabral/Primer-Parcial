@@ -84,7 +84,7 @@
             this.HastadateTimePicker.Name = "HastadateTimePicker";
             this.HastadateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.HastadateTimePicker.TabIndex = 20;
-            this.HastadateTimePicker.Value = new System.DateTime(2018, 6, 4, 0, 0, 0, 0);
+            this.HastadateTimePicker.Value = new System.DateTime(2018, 6, 6, 14, 35, 12, 0);
             // 
             // DesdedateTimePicker
             // 
@@ -93,7 +93,7 @@
             this.DesdedateTimePicker.Name = "DesdedateTimePicker";
             this.DesdedateTimePicker.Size = new System.Drawing.Size(200, 20);
             this.DesdedateTimePicker.TabIndex = 19;
-            this.DesdedateTimePicker.Value = new System.DateTime(2018, 6, 4, 0, 0, 0, 0);
+            this.DesdedateTimePicker.Value = new System.DateTime(2018, 6, 6, 14, 35, 1, 0);
             // 
             // ConsultardataGridView
             // 

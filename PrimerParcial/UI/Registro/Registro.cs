@@ -24,39 +24,47 @@ namespace PrimerParcial.UI.Registro
             grupos.Descripcion = descripcionTextBox.Text;
             grupos.Cantidad = Convert.ToInt32(cantidadNumericUpDown.Value);
             grupos.Grupo = Convert.ToInt32(grupoNumericUpDown.Value);
-            grupos.integrantes = Convert.ToInt32(cantidadNumericUpDown.Value) / Convert.ToInt32(grupoNumericUpDown.Value);
-           
+            if (grupos.Cantidad != 0 && grupos.Grupo != 0)
+            {
+                grupos.integrantes = grupos.Cantidad / grupos.Grupo;
+            }
+
             return grupos;
         }
 
         private void Buscarbutton_Click(object sender, EventArgs e)
         {
-            
-            int id = Convert.ToInt32(grupoidNumericUpDown.Value);
-            Grupos grupos = BLL.GruposBLL.Buscar(id);
-            if(validar(1))
+
+
+            if (validar(1))
             {
                 MessageBox.Show("Llene la Casilla Grupo ID", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            }else
-            if(grupos != null)
-            {
-
-
-                 grupoidNumericUpDown.Value = grupos.Grupoid ;
-                fechaDateTimePicker.Value = grupos.Fecha  ;
-                 descripcionTextBox.Text = grupos.Descripcion ;
-                cantidadNumericUpDown.Value = grupos.Cantidad ;
-                grupoNumericUpDown.Value = grupos.Grupo;
-                integrantesNumericUpDown.Value = grupos.integrantes ;
-                GeneralerrorProvider.Clear();
             }
             else
             {
-                MessageBox.Show("No Encontrado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                int id = Convert.ToInt32(grupoidNumericUpDown.Value);
+                Grupos grupos = BLL.GruposBLL.Buscar(id);
+
+                if (grupos != null)
+                {
+
+
+                    grupoidNumericUpDown.Value = grupos.Grupoid;
+                    fechaDateTimePicker.Value = grupos.Fecha;
+                    descripcionTextBox.Text = grupos.Descripcion;
+                    cantidadNumericUpDown.Value = grupos.Cantidad;
+                    grupoNumericUpDown.Value = grupos.Grupo;
+                    integrantesNumericUpDown.Value = grupos.integrantes;
+                    GeneralerrorProvider.Clear();
+                }
+                else
+                {
+                    MessageBox.Show("No Encontrado", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
         }
 
-        
+
         private void Registro_Load(object sender, EventArgs e)
         {
 
@@ -86,6 +94,7 @@ namespace PrimerParcial.UI.Registro
                 if (paso)
                 {
                     MessageBox.Show("Guardado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpiar();
                 }
                 else
                 {
@@ -93,7 +102,7 @@ namespace PrimerParcial.UI.Registro
                 }
             }
 
-           
+
 
 
         }
@@ -102,34 +111,31 @@ namespace PrimerParcial.UI.Registro
         {
             int id = Convert.ToInt32(grupoidNumericUpDown.Value);
 
-            if(validar(1))
+            if (validar(1))
             {
                 MessageBox.Show("Llene la Casilla Grupo ID", "Fallido", MessageBoxButtons.OK, MessageBoxIcon.Error);
-           
+
             }
             else
 
-            if(BLL.GruposBLL.Eliminar(id))
+            if (BLL.GruposBLL.Eliminar(id))
             {
                 MessageBox.Show("Eliminado!!", "Exito", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Limpiar();
             }
             else
             {
                 MessageBox.Show("No Pudo Eliminar!!", "Fallo", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+
             GeneralerrorProvider.Clear();
         }
 
         private void Nuevobutton_Click(object sender, EventArgs e)
         {
 
-            grupoidNumericUpDown.Value = 0;
-            fechaDateTimePicker.Value = DateTime.Now;
-            descripcionTextBox.Clear();
-            cantidadNumericUpDown.Value = 0;
-            grupoNumericUpDown.Value = 0;
-            integrantesNumericUpDown.Value = 0;
-            GeneralerrorProvider.Clear();
+            Limpiar();
         }
 
         public bool validar(int error)
@@ -159,19 +165,38 @@ namespace PrimerParcial.UI.Registro
                 GeneralerrorProvider.SetError(grupoNumericUpDown, "Llenar Existencia");
                 paso = true;
             }
-          
+
             return paso;
         }
 
-        private void integrantesNumericUpDown_ValueChanged(object sender, EventArgs e)
-        {
-           
-           
-        }
+      
 
         private void grupoNumericUpDown_ValueChanged(object sender, EventArgs e)
         {
-            integrantesNumericUpDown.Value = cantidadNumericUpDown.Value / grupoNumericUpDown.Value;
+            if (grupoNumericUpDown.Value != 0)
+            {
+                integrantesNumericUpDown.Value = cantidadNumericUpDown.Value / grupoNumericUpDown.Value;
+            }
+        }
+
+        private void Limpiar()
+        {
+            grupoidNumericUpDown.Value = 0;
+            fechaDateTimePicker.Value = DateTime.Now;
+            descripcionTextBox.Clear();
+            cantidadNumericUpDown.Value = 0;
+            grupoNumericUpDown.Value = 0;
+            integrantesNumericUpDown.Value = 0;
+            GeneralerrorProvider.Clear();
+        }
+
+        private void cantidadNumericUpDown_ValueChanged(object sender, EventArgs e)
+        {
+            if (cantidadNumericUpDown.Value != 0)
+                if (grupoNumericUpDown.Value != 0)
+                {
+                    integrantesNumericUpDown.Value = cantidadNumericUpDown.Value / grupoNumericUpDown.Value;
+                }
         }
     }
 }
